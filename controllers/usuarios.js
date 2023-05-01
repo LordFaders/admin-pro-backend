@@ -9,7 +9,7 @@ const getUsuarios = async(req, res) => {
 
     const desde = Number(req.query.desde) || 0;
     // Esta es la forma "manual" de paginar, pero
-    // al haber dos funciones asíncronas puede haber
+    // de existir dos funciones asíncronas pueden haber
     // conflictos si una se demora más que la otra:
 
     // const usuarios = await Usuario
