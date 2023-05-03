@@ -32,7 +32,7 @@ app.use('/api/upload', require('./routes/uploads'));
 // Lo último
 app.use(express.static(path.join(__dirname, '/public')));
 app.get('*', function(req, res) {
-    res.sendFile(__dirname + 'public/index.html');
+    res.sendFile(__dirname + '/public/index.html');
 });
 
 
