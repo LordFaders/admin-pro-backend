@@ -30,6 +30,7 @@ app.use('/api/login', require('./routes/auth'));
 app.use('/api/upload', require('./routes/uploads'));
 
 // Lo último
+app.use(express.static(path.join(__dirname, '/public')));
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'public/index.html'));
 });
