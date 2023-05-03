@@ -12,14 +12,14 @@ const app = express();
 // Configurar CORS
 app.use(cors());
 
-// Carpeta pública
-app.use(express.static('public'));
-
 // Lectura y parseo del body (Postman)
 app.use(express.json());
 
 // Base de datos
 dbConnection();
+
+// Carpeta pública
+app.use(express.static('public'));
 
 // Rutas
 app.use('/api/usuarios', require('./routes/usuarios'));
@@ -31,8 +31,8 @@ app.use('/api/upload', require('./routes/uploads'));
 
 // Lo último
 // app.use(express.static(path.join(__dirname, '/public')));
-app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname + '/public/index.html'));
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname + '/public/index.html'));
 });
 
 
